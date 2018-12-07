@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/vue"></script>
+    <title>VueJS</title>
+</head>
+<body>
+    <div id="vue-app">
+        <!-- <h1>{{ func('morning')}}</h1>
+        <a v-bind:href="url" target="_blank">Google link</a>
+        <img v-bind:src="img" />
+        <h1>{{ name }}</h1> -->
+
+        <!-- Нумерованный список массива -->
+        <!-- <ol>
+            <li v-for="todo in todos">
+              {{ todo.text }}
+            </li>
+        </ol>
+
+        Вставить верстку
+        <p v-html='urlTag'></p>
+
+        Транспайлит с инпута в р
+        <p>{{ message }}</p>
+        <input v-model="message"> -->
+
+        <!-- Можно использовать как v-on так @ -->
+        <!-- <button @click="age++">Add Year</button>
+        <button v-on:click="age--" >Subtract Year</button>
+        <p>Age: {{age}}</p>
+        <div id="canvas" @mousemove = "updateXY">{{ x }}, {{ y }}</div> -->
+
+
+        <ol>
+            <!--
+              Взаимодействует с Vue.component
+              Now we provide each todo-item with the todo object
+              it's representing, so that its content can be dynamic.
+              We also need to provide each component with a "key",
+              which will be explained later.
+            -->
+            <todo-item
+              v-for="item in todos"
+              v-bind:todo="item"
+              v-bind:key="item.id"
+            ></todo-item>
+          </ol>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
