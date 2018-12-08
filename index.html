@@ -49,7 +49,20 @@
               v-bind:todo="item"
               v-bind:key="item.id"
             ></todo-item>
-          </ol>
+        </ol>
+
+        <!-- v-model Транспайлит текст с инпута в спан -->
+        <input type="text" v-model="name">
+        <span>{{ name }}</span>
+        <input type="text" v-model="age">
+        <span>{{ age }}</span>
+
+        <button @click="ageA++">Add A Year</button>
+        <button @click="ageB++" >Add B Year</button>
+        <p>Age A: {{ ageA }}</p>
+        <p>Age B: {{ ageB }}</p>
+        <p>Age + AgeA: {{ addToA }}</p>
+        <p>Age + AgeB: {{ addToB }}</p>
     </div>
     <script src="app.js"></script>
 </body>
