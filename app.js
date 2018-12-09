@@ -20,7 +20,9 @@ new Vue({
         x: 0,
         y: 0,
         ageA: 0,
-        ageB: 0
+        ageB: 0,
+        available: false,
+        nearby: false
     },
     methods:{
         func: function(date){
@@ -38,6 +40,12 @@ new Vue({
         },
         addToB: function(){
             return this.ageB + this.age;
+        },
+        compClasses: function(){
+            return{
+                available: this.available,
+                nearby: this.nearby,
+            }
         }
     }
 })
