@@ -77,7 +77,16 @@
         </div>
         <p v-show="nearby">JJJJJJJJSJJJSJJJSJJJJSJ</p> -->
 
-
+        <!-- Слежение за тем что ввел клиент с помощью v-model -->
+        <p>
+            Задайте вопрос, на который можно ответить "да" или "нет":
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+        
+        <vue-item></vue-item>
+        <vue-item></vue-item>
+        
     </div>
     <script src="app.js"></script>
 </body>

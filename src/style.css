@@ -20,3 +20,13 @@ span{
     content: "nearby";
     margin-left: 10px;
 }
+.block{
+    width: 100px;
+    height: 100px;
+    background: blue;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+

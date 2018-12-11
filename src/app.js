@@ -2,8 +2,20 @@ Vue.component('todo-item', {
     props: ['todo'],
     template: '<li>{{ todo.text }}</li>'
 })
-
-new Vue({
+Vue.component('vue-item',{
+    template: '<div class="block">{{ name }} <button @click="changeName"> Change Name </button> </div>',
+    data: function(){
+        return{
+            name: "Ivan"
+        }
+    },
+    methods:{
+        changeName: function(){
+            this.name = "Maxim"
+        }
+    }
+})
+var one = new Vue({
     el: '#vue-app',
     data:{
         name: '',
@@ -23,6 +35,13 @@ new Vue({
         ageB: 0,
         available: false,
         nearby: false
+    },
+    watch: {
+        // эта функция запускается при любом изменении вопроса
+        question: function (newQuestion, oldQuestion) {
+          this.answer = 'Ожидаю, когда вы закончите печатать...'
+          this.debouncedGetAnswer()
+        }
     },
     methods:{
         func: function(date){
