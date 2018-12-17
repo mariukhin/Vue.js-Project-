@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" rel="stylesheet"/>
-    <script src="https://unpkg.com/vue"></script>
-    <title>VueJS</title>
-</head>
-<body>
-    <div id="vue-app">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-project</title>
+  </head>
+  <body>
+    <div id="app">
         <!-- <h1>{{ func('morning')}}</h1>
         <a v-bind:href="url" target="_blank">Google link</a>
         <img v-bind:src="img" />
@@ -78,16 +74,18 @@
         <p v-show="nearby">JJJJJJJJSJJJSJJJSJJJJSJ</p> -->
 
         <!-- Слежение за тем что ввел клиент с помощью v-model -->
-        <p>
+        <!-- <p>
             Задайте вопрос, на который можно ответить "да" или "нет":
             <input v-model="question">
         </p>
-        <p>{{ answer }}</p>
+        <p>{{ answer }}</p> -->
         
-        <vue-item></vue-item>
-        <vue-item></vue-item>
-        
+        <!-- <vue-item></vue-item>
+        <vue-item></vue-item> -->
+        <!-- <input type="text" ref="input"/>
+        <button @click="readRefs">Submit</button>
+        <p>Your message: {{ message }}</p> -->
     </div>
-    <script src="app.js"></script>
-</body>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>

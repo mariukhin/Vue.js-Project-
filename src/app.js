@@ -1,8 +1,8 @@
 Vue.component('todo-item', {
     props: ['todo'],
     template: '<li>{{ todo.text }}</li>'
-})
-Vue.component('vue-item',{
+  })
+  Vue.component('vue-item',{
     template: '<div class="block">{{ name }} <button @click="changeName"> Change Name </button> </div>',
     data: function(){
         return{
@@ -14,8 +14,8 @@ Vue.component('vue-item',{
             this.name = "Maxim"
         }
     }
-})
-var one = new Vue({
+  })
+  var one = new Vue({
     el: '#vue-app',
     data:{
         name: '',
@@ -65,6 +65,12 @@ var one = new Vue({
                 available: this.available,
                 nearby: this.nearby,
             }
+        },
+        readRefs: function(){
+            console.log(this.$refs.input.value);
+            this.message = this.$refs.input.value;
         }
     }
-})
+  })
+  
+  
