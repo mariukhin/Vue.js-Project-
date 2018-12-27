@@ -77,7 +77,7 @@
         <!-- <vue-item></vue-item>
         <vue-item></vue-item> -->
         <input type="text" ref="input"/>
-        <button @click.prevent ="readRefs">Submit</button>
+        <button @click.prevent ="readRefs" class="submitBtn">Submit</button>
         <p>Your message: {{ message }}</p>
   </div>
 </template>
@@ -125,5 +125,10 @@ li {
 
 a {
   color: #42b983;
+}
+.submitBtn{
+  background-color: #2c3e50;
+  color: aliceblue;
+  border: none;
 }
 </style>
