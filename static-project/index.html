@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body id="app">
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+
+        <div class="form-inline" id="search">
+            <transition name="fade">
+                <input v-on:input="searchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </transition>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+        <div class="form-inline" id="add">
+            <transition name="fade">
+                <input v-model="fNameValue" id="fName" class="form-control mr-sm-2" type="fName" placeholder="FirstName" aria-label="firstName">
+            </transition>
+            <transition name="fade">
+                <input v-model="lNameValue" id="lName" class="form-control mr-sm-2" type="lName" placeholder="LastName" aria-label="lastName">
+            </transition>
+            <transition name="fade">
+                <input v-model="nicknameValue" id="nickName" class="form-control mr-sm-2" type="nickName" placeholder="NickName" aria-label="NickName">
+            </transition>
+            <button @click="addValue(fNameValue, lNameValue, nicknameValue)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
+        </div>
+        <div id="counter">
+            <p class="items-count">{{ countItems() }}</p>
+        </div>
+    </nav>
+</div>
+<div class="height container">
+    <table class="table" id="tables">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">nickname</th>
+        </tr>
+        </thead>
+        <tbody ref="tbody">
+            <tr
+                class="list-item"
+                is="list-item"
+                v-for="(user, index) in users"
+                v-show="user.isShown"
+                v-bind:index="index"
+                v-bind:user="user"
+                v-on:remove="users.splice(index, 1)"
+            ></tr>
+        <!-- <tr class="list-item" v-for="(user, index) in users" v-show="user.isShown">
+                            v-on:remove="todos.splice(index, 1)"
+                            v-bind:firstName="user.firstName"
+                v-bind:lastName="user.lastName"
+                v-bind:nickName="user.nickName"
+            <th scope="row">{{ index+1 }}</th>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.nickName }}</td>
+        </tr> -->
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <div class="control-list">
+        <a id="prevList" onclick="GetPrevList()" class="btn btn-secondary" href="#">Prev</a>
+        <a id="nextList" onclick="GetNextList()" class="btn btn-secondary" href="#">Next</a>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="users.js"></script>
+<script src="event-emitter.js"></script>
+<script src="controls-controller.js"></script>
+<script src="table-controller.js"></script>
+<script src="add-controller.js"></script>
+<script src="counter.js"></script>
+
+</body>
+</html>
