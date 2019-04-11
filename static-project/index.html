@@ -28,9 +28,9 @@
             </transition>
             <button @click="addValue(fNameValue, lNameValue, nicknameValue)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
         </div>
-        <div id="counter">
+        <!-- <div id="counter" v-cloak>
             <p class="items-count">{{ countItems() }}</p>
-        </div>
+        </div> -->
     </nav>
 </div>
 <div class="height container">
@@ -54,10 +54,6 @@
                 v-on:remove="users.splice(index, 1)"
             ></tr>
         <!-- <tr class="list-item" v-for="(user, index) in users" v-show="user.isShown">
-                            v-on:remove="todos.splice(index, 1)"
-                            v-bind:firstName="user.firstName"
-                v-bind:lastName="user.lastName"
-                v-bind:nickName="user.nickName"
             <th scope="row">{{ index+1 }}</th>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>

@@ -6,7 +6,7 @@ Vue.component('list-item', {
       <td>\ {{ user.firstName }}\ </td>\
       <td>\ {{ user.lastName }}\ </td>\
       <td>\ {{ user.nickName }}\
-        <button class="del_btn" v-on:click="$emit(\'remove\')">Удалить</button>\
+        <button class="del_btn btn btn-outline-danger my-2 my-sm-0" v-on:click="$emit(\'remove\')">Удалить</button>\
       </td>\
     </tr>\
   ',

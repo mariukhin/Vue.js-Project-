@@ -5,7 +5,7 @@ const counter = new Vue({
     },
     methods: {
         countItems(){
-            return 0;
+            //
         }
     }
   });
