@@ -22,6 +22,9 @@ const table = new Vue({
       itemsTotal: 0
     }
   },
+  beforeCreate(){
+    EventEmitter.$emit('counter-change', this.users.length);
+  },
   created() {
     EventEmitter.$on('input-change', (value) => {
       this.filterUser(value);
@@ -35,13 +38,13 @@ const table = new Vue({
       if (!this.users || !this.users.length) {
         return;
       }
-
+      let newUsers;
       this.users.forEach( user => {
         const hasSearchValue = Object.values(user).join(' ').includes(searchValue);
-
         user.isShown = hasSearchValue;
       });
-
+      newUsers = this.users.filter(user => user.isShown == true);
+      EventEmitter.$emit('counter-change', newUsers.length);
     },
     addUser(newuser) {
       this.users.push({
@@ -50,8 +53,8 @@ const table = new Vue({
         lastName: newuser.lname,
         nickName: newuser.nickname
       });
+      EventEmitter.$emit('counter-change', this.users.length);
     },
-    
   },
 
 });

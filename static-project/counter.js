@@ -1,11 +1,11 @@
 const counter = new Vue({
     el: '#counter',
     data: {
-      itemsCount: 0,
+      itemsCount: '',
     },
-    methods: {
-        countItems(){
-            //
-        }
+    beforeCreate(){
+        EventEmitter.$on('counter-change', (value) => {
+            this.itemsCount = value;
+        });
     }
   });
